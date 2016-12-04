@@ -15,18 +15,18 @@ install:
 	install -m644 xbps.d.5 $(DESTDIR)$(SHAREDIR)/man/man5
 	install -d $(DESTDIR)$(PKGCONFIGDIR)
 	install -m644 $(PCFILE) $(DESTDIR)$(PKGCONFIGDIR)
-	install -d $(DESTDIR)/$(DBDIR)/keys
-	install -m644 *.plist $(DESTDIR)/$(DBDIR)/keys
-	install -d $(DESTDIR)/$(SHAREDIR)/xbps.d
-	install -m644 repod-main.conf $(DESTDIR)/$(SHAREDIR)/xbps.d/00-repository-main.conf
-	install -m644 xbps.conf $(DESTDIR)/$(SHAREDIR)/xbps.d/xbps.conf
-	install -d $(DESTDIR)/$(SHAREDIR)/zsh/site-functions
-	install -m644 _xbps* $(DESTDIR)/$(SHAREDIR)/zsh/site-functions
-	install -d $(DESTDIR)/$(SHAREDIR)/bash-completion/completions
-	install -m644 xbps.bash $(DESTDIR)/$(SHAREDIR)/bash-completion/completions/xbps
+	install -d $(DESTDIR)$(DBDIR)/keys
+	install -m644 *.plist $(DESTDIR)$(DBDIR)/keys
+	install -d $(DESTDIR)$(SHAREDIR)/xbps.d
+	install -m644 repod-main.conf $(DESTDIR)$(SHAREDIR)/xbps.d/00-repository-main.conf
+	install -m644 xbps.conf $(DESTDIR)$(SHAREDIR)/xbps.d/xbps.conf
+	install -d $(DESTDIR)$(SHAREDIR)/zsh/site-functions
+	install -m644 _xbps* $(DESTDIR)$(SHAREDIR)/zsh/site-functions
+	install -d $(DESTDIR)$(SHAREDIR)/bash-completion/completions
+	install -m644 xbps.bash $(DESTDIR)$(SHAREDIR)/bash-completion/completions/xbps
 	for file in xbps-checkvers xbps-create xbps-dgraph xbps-install \
 		xbps-pkgdb xbps-query xbps-reconfigure xbps-remove xbps-rindex; do \
-		ln -sf xbps $(DESTDIR)/$(SHAREDIR)/bash-completion/completions/$$file; \
+		ln -sf xbps $(DESTDIR)$(SHAREDIR)/bash-completion/completions/$$file; \
 	done
 
 .PHONY: uninstall
